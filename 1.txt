@@ -1,0 +1,150 @@
+package in.ashokit.entity;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import lombok.Data;
+
+@Entity
+@Data
+@Table(name = "PLAN_MASTER")
+public class Plan {
+	
+	@Id
+	@GeneratedValue
+	@Column(name = "PLAN_ID")
+	private Integer planId;
+	
+	@Column(name = "PLAN_NAME")
+	private String planName;
+	
+	@Column(name = "PLAN_START_DATE")
+	private LocalDate planStartDate;
+	
+	@Column(name = "PLAN_END_DATE")
+	private LocalDate planEndDate;
+	
+	@Column(name = "ACTIVE_SW")
+	private String activeSw;
+	
+	@Column(name = "PLAN_CATEGORY_ID")
+	private Integer planCategoryId;
+	
+	@Column(name = "CREATED_BY")
+	private String createdBy;
+	
+	@Column(name = "UPDATE_BY")
+	private String updateBy;
+	
+	@Column(name = "CREATE_DATE" , updatable = false)
+	@CreationTimestamp
+	private LocalDate createDate;
+	
+	@UpdateTimestamp
+	@Column(name = "UPDATE_DATE" , insertable = false)
+	private LocalDate updateDate;
+
+	
+
+}
+
+
+package in.ashokit.entity;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name="PLAN_CATEGORY")
+public class PlanCateogry {
+	
+	@Id
+	@GeneratedValue
+	@Column(name = "CATEGORY_ID")
+	private Integer categoryId;
+	@Column(name = "CATEGORY_NAME")
+	private String categoryName;
+	
+	@Column(name = "ACTIVE_SW")
+	private String activeSw;
+	@Column(name = "CREATED_BY")
+	private String createdBy;
+	
+	@Column(name = "UPDATE_BY")
+	private String updateBy;
+	@Column(name = "CREATE_DATE" , updatable = false)
+	@CreationTimestamp
+	private LocalDate createDate;
+	@UpdateTimestamp
+	@Column(name = "UPDATE_DATE" , insertable = false)
+	private LocalDate updateDate;
+	
+
+}
+
+
+package in.ashokit.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import in.ashokit.entity.PlanCateogry;
+
+public interface PlanCategoryRepo extends JpaRepository<PlanCateogry, Integer>{
+
+}
+
+
+package in.ashokit.repo;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import in.ashokit.entity.Plan;
+
+public interface PlanRepo extends JpaRepository<Plan, Integer> {
+
+}
+
+
+#Data Source Properties
+
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.username=ashokit
+spring.datasource.password=ashokit
+spring.datasource.driver-class-name==org.h2.Driver
+#spring.h2.console.enabled=true
+#spring.jpa.show-sql=true
+#spring.jpa.hibernate.ddl-auto=create
+
+
+#server.port=9090
+
+oracle database
+===============
+username : system
+password : root
+
+sql database
+============
+username : root
+password : root
+
+
