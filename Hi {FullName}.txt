@@ -1,0 +1,21 @@
+Hi {FullName},<br/>
+<br/>
+your registration is almost completed<br/>
+<br/>
+please find your temporary password below<br/>
+<br/>
+Temporary Pwd: {Temp-Pwd}<br/>
+<br/>
+<a href="{URL}"Click here to Unlock your Account</a><br/>
+<br/>
+Thanks 
+Admin Team
+
+
+
+create table account (acc_num bigint not null, acc_type varchar(255) not null,
+                      branch varchar(255), holder_name varchar(255), 
+                       primary key (acc_num, acc_type)) engine=InnoDB
+
+	
+https://docs.microsoft.com/windows/wsl/wsl2-kernel
