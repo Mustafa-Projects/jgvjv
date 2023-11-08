@@ -8,8 +8,7 @@ Temporary Pwd: {Temp-Pwd}<br/>
 <br/>
 <a href="{URL}"Click here to Unlock your Account</a><br/>
 <br/>
-Thanks 
-Admin Team
+\
 
 
 
